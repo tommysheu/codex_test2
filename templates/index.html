@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPT-4o Chatbot</title>
+  <link rel="stylesheet" href="/static/style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+  <div class="app">
+    <aside class="panel">
+      <h1>聊天機器人</h1>
+      <label>模式</label>
+      <select id="mode">
+        <option value="native">LLM 原生知識</option>
+        <option value="auto_web">自動判斷是否網頁查詢</option>
+        <option value="manual_web">手動設定網頁查詢</option>
+      </select>
+
+      <label>查詢引擎</label>
+      <select id="provider">
+        <option value="serpapi">SerpAPI</option>
+        <option value="ddgs">DDGS</option>
+      </select>
+
+      <label class="checkbox-row">
+        <input type="checkbox" id="manualToggle" checked />
+        手動模式啟用網頁查詢
+      </label>
+
+      <label>上傳檔案（pdf/ppt/doc/xls/txt/png/jpg）</label>
+      <input type="file" id="fileInput" multiple />
+      <button id="uploadBtn">上傳檔案</button>
+      <ul id="fileList"></ul>
+    </aside>
+
+    <main class="chat-layout">
+      <div id="chat"></div>
+      <div class="composer">
+        <textarea id="question" placeholder="輸入問題，Enter 送出，Shift+Enter 換行"></textarea>
+        <button id="sendBtn">送出</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="/static/app.js"></script>
+</body>
+</html>
